@@ -13,6 +13,13 @@ echo "Setting up tmux configuration..."
 echo "Copying .tmux.conf to ~/.tmux.conf"
 cp "$SCRIPT_DIR/.tmux.conf" ~/.tmux.conf
 
+# Copy custom scripts for Dracula theme integration
+echo "Copying custom scripts to ~/.tmux/plugins/tmux/scripts/"
+mkdir -p ~/.tmux/plugins/tmux/scripts
+cp "$SCRIPT_DIR/scripts/pomodoro.sh" ~/.tmux/plugins/tmux/scripts/pomodoro.sh
+cp "$SCRIPT_DIR/scripts/utils.sh" ~/.tmux/plugins/tmux/scripts/utils.sh
+chmod +x ~/.tmux/plugins/tmux/scripts/*.sh
+
 # Install TPM (Tmux Plugin Manager) if not already installed
 if [ ! -d ~/.tmux/plugins/tpm ]; then
     echo "Installing Tmux Plugin Manager (TPM)..."

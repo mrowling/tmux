@@ -22,7 +22,8 @@ cd ~/.tmux-config
 
 The setup script will:
 1. Copy `.tmux.conf` to your home directory (`~/.tmux.conf`)
-2. Install Tmux Plugin Manager (TPM)
+2. Copy custom Dracula theme scripts for Pomodoro integration
+3. Install Tmux Plugin Manager (TPM)
 
 ## Manual Setup
 
@@ -34,6 +35,12 @@ git clone https://github.com/mrowling/tmux.git ~/.tmux-config
 
 # Copy the configuration file
 cp ~/.tmux-config/.tmux.conf ~/.tmux.conf
+
+# Copy custom scripts
+mkdir -p ~/.tmux/plugins/tmux/scripts
+cp ~/.tmux-config/scripts/pomodoro.sh ~/.tmux/plugins/tmux/scripts/pomodoro.sh
+cp ~/.tmux-config/scripts/utils.sh ~/.tmux/plugins/tmux/scripts/utils.sh
+chmod +x ~/.tmux/plugins/tmux/scripts/*.sh
 
 # Install TPM
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
