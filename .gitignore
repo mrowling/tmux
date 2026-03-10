@@ -1,0 +1,2 @@
+# Ignore plugin directory (will be installed via TPM)
+plugins/
